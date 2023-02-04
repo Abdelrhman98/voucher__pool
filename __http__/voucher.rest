@@ -1,7 +1,22 @@
-@voucher_URI = "http://localhost:3000/vouchers"
+@voucher_URI = http://localhost:3000/api/v0/vouchers
+@HEADERS = Content-Type: application/json
+@userToken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6ImJvZGV5OTkxMjExIiwiaXNGdWxseUNyZWF0ZWQiOmZhbHNlLCJfaWQiOiJKT3JpMkdRclBUTzZjcjhHNWlZMGciLCJlbWFpbCI6ImFiZGVscmhtYW4uc29sZW1hbjk4QGdtYWlsLmNvbSIsIk1vYmlsZSI6IjAxMjMyMTE0MTIzIiwiaWF0IjoxNjY2MzU5MjM4fQ.poYaQGv36srk00SMP6GWz17_tEtjOnC79R6qiQyJxxs
 
-POST {{voucher_URI}}/apply HTTP/1.1
+PUT {{voucher_URI}}/apply HTTP/1.1
+{{HEADERS}}
+Authorization: {{userToken}}
 
 {
-  "voucherCode": "ABC123",
+  "voucherCode": "1RDIFCCZAC"
+}
+
+###
+POST {{voucher_URI}}/generate HTTP/1.1
+{{HEADERS}}
+Authorization: {{userToken}}
+
+{
+  "voucherNo": 40,
+  "minDiscount": 100,
+  "maxDiscount": 1000
 }

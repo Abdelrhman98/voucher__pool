@@ -22,7 +22,7 @@ ExpressApp.get(`${BASE_URL}/healthCheck`, (req, res, next) => {
 const port = configuration.expressRouter.port;
 
 ExpressApp.use(`${BASE_URL}/auth`, users);
-ExpressApp.use(`${BASE_URL}/voucher`, voucher);
+ExpressApp.use(`${BASE_URL}/vouchers`, voucher);
 
 ExpressApp.listen(port, () => {
     logger.info(`Listening on port ${port}`);

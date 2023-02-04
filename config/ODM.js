@@ -1,6 +1,6 @@
 import _ from 'lodash';
 class ODM {
-    async findOne( selector = {}, options = {}) {
+    async findOne(selector = {}, options = {}) {
         const { fields } = options;
         return this.COLLECTION.findOne(selector).select(fields).lean();
     }
@@ -48,6 +48,14 @@ class ODM {
 
     async aggregate(pipeline, options = {}) {
         return this.COLLECTION.aggregate(pipeline, (err, result) => { });
+    }
+
+    async insertMany(params) {
+        return this.COLLECTION.insertMany(params);
+    }
+
+    async updateOne(query, newParams, options = {}) {
+        return this.COLLECTION.updateOne(query, newParams, { new: true })
     }
 }
 

@@ -10,8 +10,21 @@ const VoucherSchema = new Schema(
       type: String,
       default: () => nanoid(),
     },
+    voucherCode: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     amount: {
       type: Number,
+    },
+    createdBy: {
+      type: String,
+      required: true,
+    },
+    isUsed: {
+      type: Boolean,
+      default: false,
     },
     usedBy:{
       type: String,
