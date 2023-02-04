@@ -1,0 +1,28 @@
+@rakha-app = http://localhost:3000/api/v0
+@auth = {{rakha-app}}/auth
+
+@HEADERS = Content-Type: application/json
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6ImJvZGV5OTkxMjExIiwiaXNGdWxseUNyZWF0ZWQiOmZhbHNlLCJfaWQiOiJKT3JpMkdRclBUTzZjcjhHNWlZMGciLCJlbWFpbCI6ImFiZGVscmhtYW4uc29sZW1hbjk4QGdtYWlsLmNvbSIsIk1vYmlsZSI6IjAxMjMyMTE0MTIzIiwiaWF0IjoxNjY2MzU5MjM4fQ.poYaQGv36srk00SMP6GWz17_tEtjOnC79R6qiQyJxxs
+@token2 = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0Z1bGx5Q3JlYXRlZCI6dHJ1ZSwicHJlZkNvbG9yIjoiIzAwMCIsInB1YmxpY05hbWUiOiJyYWtoYS5vbS90ZXN0TGluayIsImZ1bGxOYW1lIjoiYm9kZXkiLCJfaWQiOiJPSUE2WUJXVlNaMGdRUWtDTE9xN0MiLCJlbWFpbCI6InRlc3QudGVzdEBnbWFpbC5jb20iLCJzb2NpYWwiOnsiaW5zdGdyYW0iOiJ0ZXN0TGluayJ9LCJNb2JpbGUiOiIwMTIzMjExNDEyMyIsImZpZWxkIjoiVUkvVVgiLCJpYXQiOjE2NjYzNTkxNzl9.gwT9WTCSbn7kO50JJ1VzX3-wevxDJXf1qRY5KQd5HRQ
+### check if it works ###
+GET {{rakha-app}}/healthCheck
+
+### signup ###
+POST {{auth}}/signup
+{{HEADERS}}
+
+{
+    "fullName":"bodey991211",
+    "password":"12345@$#asdAadsada",
+    "email":"abdelrhman.soleman98@gmail.com",
+    "Mobile": "01232114123"
+}
+
+### LOGIN ###
+POST {{auth}}/login
+{{HEADERS}}
+
+{
+    "email":"abdelrhman.soleman98@gmail.com",
+    "password":"12345@$#asdAadsada"
+}

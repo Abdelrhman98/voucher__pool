@@ -1,0 +1,7 @@
+@voucher_URI = "http://localhost:3000/vouchers"
+
+POST {{voucher_URI}}/apply HTTP/1.1
+
+{
+  "voucherCode": "ABC123",
+}
